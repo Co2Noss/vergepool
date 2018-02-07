@@ -1,0 +1,38 @@
+2018/02/04 09:23:37 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:24:02 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:24:46 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:25:07 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:25:07 [trace] [system.db.ar.CActiveRecord] db_coins.find()
+2018/02/04 09:25:07 [trace] [system.CModule] Loading "db" application component
+2018/02/04 09:25:07 [trace] [system.db.CDbConnection] Opening DB connection
+2018/02/04 09:25:07 [trace] [system.CModule] Loading "cache" application component
+2018/02/04 09:25:07 [trace] [system.caching.CMemCache] Serving "yii:dbschemamysql:host=localhost;dbname=pool:website:coins" from cache
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `coins` `t` WHERE symbol=:sym LIMIT 1
+2018/02/04 09:25:07 [trace] [system.caching.CMemCache] Serving "yii:dbschemamysql:host=localhost;dbname=pool:website:markets" from cache
+2018/02/04 09:25:07 [trace] [system.db.ar.CActiveRecord] db_markets.findAll()
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `markets` `t` WHERE coinid=1272 ORDER BY disabled, price DESC
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT value, type FROM settings WHERE param=:key
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT value, type FROM settings WHERE param=:key
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT value, type FROM settings WHERE param=:key
+2018/02/04 09:25:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT value, type FROM settings WHERE param=:key
+2018/02/04 09:25:17 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:25:17 [trace] [system.CModule] Loading "db" application component
+2018/02/04 09:25:17 [trace] [system.db.CDbConnection] Opening DB connection
+2018/02/04 09:25:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT value, type FROM settings WHERE param=:key
+2018/02/04 09:25:17 [trace] [system.db.CDbCommand] Executing SQL: DELETE FROM market_history WHERE time < 1512462317
+2018/02/04 09:25:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT idcoin, idmarket,
+		AVG(MH.price) AS price, AVG(MH.price2) AS price2, MAX(MH.balance) AS balance,
+		MIN(MH.id) AS firstid, COUNT(MH.id) AS nbrecords, (MH.time DIV 3600) AS ival
+		FROM market_history MH
+		INNER JOIN coins C ON C.id = MH.idcoin
+		WHERE MH.time < 1517127917 AND C.symbol='XVG'
+		GROUP BY MH.idcoin, MH.idmarket, ival
+		HAVING nbrecords > 1
+2018/02/04 09:25:33 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:25:33 [trace] [system.CModule] Loading "db" application component
+2018/02/04 09:25:33 [trace] [system.db.CDbConnection] Opening DB connection
+2018/02/04 09:25:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM coins WHERE symbol=:symbol
+2018/02/04 09:25:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM markets WHERE name=:exch
+2018/02/04 09:25:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT param FROM settings WHERE param LIKE 'bittrex-%'
+2018/02/04 09:26:01 [trace] [system.CModule] Loading "log" application component
+2018/02/04 09:26:20 [trace] [system.CModule] Loading "log" application component
